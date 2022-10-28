@@ -41,9 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'task.apps.TaskConfig',
+
+    # Installed
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -128,3 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 django_heroku.settings(locals())
+
+
+# CORS HEADERS CONFIGS
+
+CORS_ALLOWED_ORIGINS = ['*']
+
+CORS_ALLOW_ALL_ORIGINS: True
